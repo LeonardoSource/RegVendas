@@ -1,2 +1,2 @@
 # RegVendas
-A simple sales record
+A simple sales record made with Zenity
