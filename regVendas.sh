@@ -14,9 +14,17 @@ ARQ="$WORK_DIR/$(date +%F).txt"
 
 
 # INICIO
-while $(zenity --question --text "Continuar?") ; do
 
-    echo $(zenity --width=400 --height=200 --forms --text "Produto e Preço" \
-     --add-entry="Produto" --add-entry="Preço" --separator="   --   ") >> $ARQ
-
+while : ; do
+    form=$(zenity --width=400 --height=200 --forms --text "Produto e Preço" \
+     --add-entry="Produto" --add-entry="Preço" --separator="   --   ") ;
+    
+    if  [[ $form ]] ; then
+        echo $form >> $ARQ
+        elif [[ $(zenity --question --text "Já Vai ?" \
+        --ok-label="Mostar Resumo" --cancel-label="SAIR") ]] ; then 
+        zenity --info --text="AQUI vem o resumo" ; else # erro o cancel ou ok no q da no mesmoo
+        exit 0;
+    fi
+        
 done
