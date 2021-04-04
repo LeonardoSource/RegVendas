@@ -19,11 +19,11 @@ while : ; do
     form=$(zenity --width=400 --height=200 --forms --text "Produto e Preço" \
      --add-entry="Produto" --add-entry="Preço" --separator="   --   ") ;
     
-    if  [[ $form ]] ; then
-        echo $form >> $ARQ
+    if  [[ $form ]] ; then # Nao for vazio
+        echo $form >> $ARQ ;
         elif [[ $(zenity --question --text "Já Vai ?" \
         --ok-label="Mostar Resumo" --cancel-label="SAIR") ]] ; then 
-        zenity --info --text="AQUI vem o resumo" ; else # erro o cancel ou ok no q da no mesmoo
+        zenity --info --text="AQUI vem o resumo" ; else # erro o cancel ou ok no q da no mesmo
         exit 0;
     fi
         
