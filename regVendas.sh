@@ -21,9 +21,12 @@ while : ; do
     
     if  [[ $form ]] ; then # Nao for vazio
         echo $form >> $ARQ ;
-        elif [[ $(zenity --question --text "Já Vai ?" \
-        --ok-label="Mostar Resumo" --cancel-label="SAIR") ]] ; then 
-        zenity --info --text="AQUI vem o resumo" ; else # erro o cancel ou ok no q da no mesmo
+        elif [[ $(zenity --list --text "Fechamento" \
+					--checklist \
+					--column "" \
+					--column="Ação" \
+					FALSE "Exibir Resumo") ]] ; then 
+        zenity --info --text="AQUI vem o resumo" ; else
         exit 0;
     fi
         
