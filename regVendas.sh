@@ -16,7 +16,7 @@ ARQ="$WORK_DIR/$(date +%F).txt"
 # INICIO
 
 while : ; do
-    form=$(zenity --width=400 --height=200 --forms --text "Produto e Preço" \
+    form=$(zenity --title "Controle de Vendas" --width=400 --height=200 --forms --text "Produto e Preço" \
      --add-entry="Produto" --add-entry="Preço" --separator="   --   ") ;
     
     if  [[ $form ]] ; then # Nao for vazio
