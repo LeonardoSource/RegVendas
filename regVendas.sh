@@ -31,3 +31,4 @@ while : ; do
     fi
         
 done
+# Remover linhas duplicadas nos arquivos de registro
