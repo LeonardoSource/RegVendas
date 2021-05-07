@@ -17,10 +17,11 @@ ARQ="$WORK_DIR/$(date +%F).txt"
 
 while : ; do
     form=$(zenity --width=400 --height=200 --forms --text "Produto e Preço" \
-     --add-entry="Produto" --add-entry="Preço" --separator="   --   ") ;
+     --title="IMPORTADOS" \
+     --add-entry="Produto" --add-entry="Preço" --separator="  --   R$") ;
     
     if  [[ $form ]] ; then # Nao for vazio
-        echo $form >> $ARQ ;
+        echo "[ $(date +%c) ] $form" >> $ARQ ;
         elif [[ $(zenity --list --text "Fechamento" \
 					--checklist \
 					--column "" \
