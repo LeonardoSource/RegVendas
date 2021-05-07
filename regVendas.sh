@@ -16,9 +16,14 @@ ARQ="$WORK_DIR/$(date +%F).txt"
 # INICIO
 
 while : ; do
+<<<<<<< HEAD
     form=$(zenity --width=400 --height=200 --forms --text "Produto e Preço" \
      --title="IMPORTADOS" \
      --add-entry="Produto" --add-entry="Preço" --separator="  --   R$") ;
+=======
+    form=$(zenity --title "Controle de Vendas" --width=400 --height=200 --forms --text "Produto e Preço" \
+     --add-entry="Produto" --add-entry="Preço" --separator="   --   ") ;
+>>>>>>> 5c3c43e6bcd6f0e4a2cec36a8b39fc5d54bc678f
     
     if  [[ $form ]] ; then # Nao for vazio
         echo "[ $(date +%c) ] $form" >> $ARQ ;
@@ -32,3 +37,4 @@ while : ; do
     fi
         
 done
+# Remover linhas duplicadas nos arquivos de registro
