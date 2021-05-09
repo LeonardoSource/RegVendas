@@ -11,14 +11,14 @@ ARQ="$WORK_DIR/$(date +%F).txt"
 
 [[ ! -d "$WORK_DIR" ]] && mkdir "$WORK_DIR"
 [[ ! -e "$ARQ" ]] && touch "$ARQ"
-
+[[ -z "$TITLE" ]] && read -p "Primeiro defina o titulo o nome do seu negócio : " TITLE && export TITLE
 
 # INICIO
 
 while : ; do
 <<<<<<< HEAD
     form=$(zenity --width=400 --height=200 --forms --text "Produto e Preço" \
-     --title="IMPORTADOS" \
+     --title="$TITLE" \
      --add-entry="Produto" --add-entry="Preço" --separator="  --   R$") ;
 =======
     form=$(zenity --title "Controle de Vendas" --width=400 --height=200 --forms --text "Produto e Preço" \
