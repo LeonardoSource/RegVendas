@@ -8,12 +8,10 @@
 # Configuração inicial
 WORK_DIR="$HOME/RegVendas"
 ARQ="$WORK_DIR/$(date +%F).txt"
+TITLE="Vendas"
 
 [[ ! -d "$WORK_DIR" ]] && mkdir "$WORK_DIR"
 [[ ! -e "$ARQ" ]] && touch "$ARQ"
-[[ -z "$TITLE" ]] && read -p "Nome do seu negócio : " TITLE ; \
-			export TITLE ; \
-			echo "export TITLE=\"$TITLE\"" >> $HOME/.bashrc ;
 
 # INICIO
 
